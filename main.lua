@@ -19,6 +19,8 @@ function love.update(dt)
   }
 
   scenes:update(dt)
+
+  click = false
 end
 
 function love.draw()
@@ -33,4 +35,8 @@ end
 
 function pos_in(x,y,x2,y2,w,h)
   return x > x2 and x < x2 + w and y > y2 and y < y2 + h
+end
+
+function love.mousepressed(x,y,b)
+  click = (b==1)
 end
