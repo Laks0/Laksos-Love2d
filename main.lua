@@ -4,6 +4,9 @@ local UI = require "UI/ui"
 
 defaultFont = love.graphics.getFont()
 
+width = love.graphics.getWidth()
+height = love.graphics.getHeight()
+
 function love.load()
   render:create(5)
 
@@ -39,4 +42,14 @@ end
 
 function love.mousepressed(x,y,b)
   click = (b==1)
+end
+
+function lerp(v,m,M)
+  if v < m then
+    v = m
+  end
+  if v > M then
+    v = M
+  end
+  return v
 end
